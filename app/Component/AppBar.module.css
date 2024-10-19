@@ -1,0 +1,67 @@
+.appbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #009688; /* Taiwan-inspired color */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .navlinks {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navlinks a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .navlinks a:hover {
+    color: #80cbc4; /* Lighter shade on hover */
+  }
+  
+  .searchbar {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  
+  .searchbar input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px;
+    width: 150px;
+  }
+  
+  .searchbar input::placeholder {
+    color: #80cbc4;
+  }
+  
+  .searchbar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #009688;
+  }
+  
+  .searchbar button:hover {
+    color: #00796b;
+  }
+  
