@@ -1,19 +1,8 @@
-
-
 'use client';
-
-import axios from 'axios';
-import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import styles from './Search.module.css'; // Assuming you have some CSS for styling
-// import { useRouter } from 'next/router';
+import styles from './Search.module.css';
+import Image from 'next/image'
 
-// interface Cocktail {
-//   idDrink: string;
-//   strDrink: string;
-//   strDrinkThumb: string;
-//   strCategory: string;
-// }
 interface Cocktail {
   idDrink: string;
   strDrink: string;
@@ -31,8 +20,6 @@ const Favorite = () => {
       const parsedCocktails = JSON.parse(savedCocktails); // Parse the JSON string
       setCocktail(parsedCocktails); // Set the state with the parsed data
     }
-
-    console.log('Cocktail list length:', cocktail.length);
   }, []); // This useEffect runs once when the component mounts
   const removeFromFavorites = (idDrink: string) => {
     const updatedCocktails = cocktail.filter(cocktail1 => cocktail1.idDrink !== idDrink);
@@ -62,7 +49,7 @@ const Favorite = () => {
 
                 <tr key={cocktails.idDrink}>
                   <td>
-                    <img src={cocktails.strDrinkThumb} alt={cocktails.strDrink} width="50" height="50" />
+                    <Image src={cocktails.strDrinkThumb} alt={cocktails.strDrink} width="50" height="50" />
                   </td>
                   <td>{cocktails.strDrink}</td>
                   <td>{cocktails.idDrink}</td>
@@ -78,23 +65,6 @@ const Favorite = () => {
       ) : (
         <p>No favorite cocktails found.</p>
       )}
-      {/* {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error if there is one */}
-{/* 
-      <div>
-        <h1>{id ? `Results for "${id}"` : 'Random Cocktails'}</h1>
-        <div className={styles.container}>
-          {results.length > 0 ? (
-            results.map(cocktail => (
-              <div key={cocktail.idDrink} className={styles.card}>
-                <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-                <h2>{cocktail.strDrink}</h2>                
-              </div>
-            ))
-          ) : (
-            <p>No cocktails found.</p>
-          )}
-        </div>
-      </div>  */}
     </div>
   );
 };
